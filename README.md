@@ -52,8 +52,13 @@ To **skip the basics**, do the following:
 
 
 <a name="scratch"></a>
+<<<<<<< HEAD
 ## Set up the project
 
+=======
+Set up the project
+------------------
+>>>>>>> Regenerate README.md based on updates
 
 First you set up a basic build script. You can use any build system you like when building apps with Spring, but the code you need to work with [Maven](https://maven.apache.org) and [Gradle](http://gradle.org) is included here. If you're not familiar with either, refer to [Building Java Projects with Maven](../gs-maven/README.md) or [Building Java Projects with Gradle](../gs-gradle/README.md).
 
@@ -120,7 +125,12 @@ Note to experienced Maven users who are unaccustomed to using an external parent
 
 
 <a name="initial"></a>
+<<<<<<< HEAD
 ## Create a resource representation class
+=======
+Create a resource representation class
+--------------------------------------
+>>>>>>> Regenerate README.md based on updates
 
 Now that you've set up the project and build system, you can create your web service.
 
@@ -135,7 +145,11 @@ The service will handle `GET` requests for `/greeting`, optionally with a `name`
 
 The `id` field is a unique identifier for the greeting, and `content` is the textual representation of the greeting.
 
+<<<<<<< HEAD
 To model the greeting representation, you create a _resource representation class_. To do this, you simply create a plain old java object with fields, constructors, and accessors for the `id` and `content` data:
+=======
+To model the greeting representation, you create a resource representation class. Provide a plain old java object with fields, constructors, and accessors for the `id` and `content` data:
+>>>>>>> Regenerate README.md based on updates
 
 `src/main/java/hello/Greeting.java`
 ```java
@@ -161,7 +175,11 @@ public class Greeting {
 }
 ```
 
+<<<<<<< HEAD
 > **Note:** As you'll see in steps below, Spring will use the _Jackson_ JSON library to automatically marshal instances of type `Greeting` into JSON.
+=======
+> **Note:** As you see in steps below, Spring uses the [Jackson JSON][jackson] library to automatically marshal instances of type `Greeting` into JSON.
+>>>>>>> Regenerate README.md based on updates
 
 Next you create the resource controller that will serve these greetings.
 
@@ -169,7 +187,11 @@ Next you create the resource controller that will serve these greetings.
 Create a resource controller
 ------------------------------
 
+<<<<<<< HEAD
 In Spring's approach to building RESTful web services, HTTP requests are handled by a _controller_. These components are easily identified by the [`@Controller`][] annotation, and the `GreetingController` below handles `GET` requests for `/greeting` by returning a new instance of the `Greeting` class:
+=======
+In Spring's approach to building RESTful web services, HTTP requests are handled by a controller. These components are easily identified by the [`@Controller`][] annotation, and the `GreetingController` below handles `GET` requests for `/greeting` by returning a new instance of the `Greeting` class:
+>>>>>>> Regenerate README.md based on updates
 
 `src/main/java/hello/GreetingController.java`
 ```java
@@ -200,7 +222,11 @@ This controller is concise and simple, but there's plenty going on under the hoo
 
 The `@RequestMapping` annotation ensures that HTTP requests to `/greeting` are mapped to the `greeting()` method.
 
+<<<<<<< HEAD
 > **Note:** The above example does not specify `GET` vs. `PUT`, `POST`, and so forth, because `@RequestMapping` maps _all_ HTTP operations by default. Use `@RequestMapping(method=GET)` to narrow this mapping.
+=======
+> **Note:** The above example does not specify `GET` vs. `PUT`, `POST`, and so forth, because `@RequestMapping` maps all HTTP operations by default. Use `@RequestMapping(method=GET)` to narrow this mapping.
+>>>>>>> Regenerate README.md based on updates
 
 `@RequestParam` binds the value of the query string parameter `name` into the `name` parameter of the `greeting()` method. This query string parameter is not `required`; if it is absent in the request, the `defaultValue` of "World" is used.
 
@@ -210,16 +236,26 @@ A key difference between a traditional MVC controller and the RESTful web servic
 
 To accomplish this, the [`@ResponseBody`][] annotation on the `greeting()` method tells Spring MVC that it does not need to render the greeting object through a server-side view layer, but that instead that the greeting object returned _is_ the response body, and should be written out directly.
 
+<<<<<<< HEAD
 The `Greeting` object must be converted to JSON. Thanks to Spring's _HTTP message converter_ support, you don't need to do this conversion manually. Because [Jackson 2][jackson] is on the classpath, Spring's [`MappingJackson2HttpMessageConverter`][] is automatically chosen to convert the `Greeting` instance to JSON.
+=======
+The `Greeting` object must be converted to JSON. Thanks to Spring's HTTP message converter support, you don't need to do this conversion manually. Because [Jackson 2][jackson] is on the classpath, Spring's [`MappingJackson2HttpMessageConverter`][] is automatically chosen to convert the `Greeting` instance to JSON.
+>>>>>>> Regenerate README.md based on updates
 
 
 Make the application executable
 -------------------------------
 
+<<<<<<< HEAD
 Although it is possible to package this service as a traditional _web application archive_ or [WAR][u-war] file for deployment to an external application server, the simpler approach demonstrated below creates a _standalone application_. You package everything in a single, executable JAR file, driven by a good old Java `main()` method. And along the way, you use Spring's support for embedding the [Tomcat][u-tomcat] servlet container as the HTTP runtime, instead of deploying to an external instance.
 
 ### Create a main class
 The `main()` method defers to the [`SpringApplication`][] helper class, providing `Application.class` as an argument to its `run()` method. This tells Spring to read the annotation metadata from `Application` and to manage it as a component in the _[Spring application context][u-application-context]_.
+=======
+Although it is possible to package this service as a traditional [WAR][u-war] file for deployment to an external application server, the simpler approach demonstrated below creates a standalone application. You package everything in a single, executable JAR file, driven by a good old Java `main()` method. Along the way, you use Spring's support for embedding the [Tomcat][u-tomcat] servlet container as the HTTP runtime, instead of deploying to an external instance.
+
+### Create an Application class
+>>>>>>> Regenerate README.md based on updates
 
 `src/main/java/hello/Application.java`
 ```java
@@ -239,6 +275,7 @@ public class Application {
 }
 ```
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 ```java
 package hello;
@@ -260,10 +297,20 @@ public class Application {
 The `main()` method defers to the [`SpringApplication`][] helper class, providing `Application.class` as an argument to its `run()` method. This tells Spring to read the annotation metadata from `Application` and to manage it as a component in the _[Spring application context][u-application-context]_.
 
 >>>>>>> Refactor to new {!include} syntax
+=======
+The `main()` method defers to the [`SpringApplication`][] helper class, providing `Application.class` as an argument to its `run()` method. This tells Spring to read the annotation metadata from `Application` and to manage it as a component in the [Spring application context][u-application-context].
+
+>>>>>>> Regenerate README.md based on updates
 The `@ComponentScan` annotation tells Spring to search recursively through the `hello` package and its children for classes marked directly or indirectly with Spring's [`@Component`][] annotation. This directive ensures that Spring finds and registers the `GreetingController`, because it is marked with `@Controller`, which in turn is a kind of `@Component` annotation.
 
 The [`@EnableAutoConfiguration`][] annotation switches on reasonable default behaviors based on the content of your classpath. For example, because the application depends on the embeddable version of Tomcat (tomcat-embed-core.jar), a Tomcat server is set up and configured with reasonable defaults on your behalf. And because the application also depends on Spring MVC (spring-webmvc.jar), a Spring MVC [`DispatcherServlet`][] is configured and registered for you — no `web.xml` necessary! Auto-configuration is a powerful, flexible mechanism. See the [API documentation][`@EnableAutoConfiguration`] for further details.
 
+<<<<<<< HEAD
+=======
+### Build an executable JAR
+-----------------------
+
+>>>>>>> Regenerate README.md based on updates
 Now that your `Application` class is ready, you simply instruct the build system to create a single, executable jar containing everything. This makes it easy to ship, version, and deploy the service as an application throughout the development lifecycle, across different environments, and so forth.
 
 Add the following configuration to your existing Maven POM:
@@ -324,7 +371,12 @@ Notice also how the `id` attribute has changed from `1` to `2`. This proves that
 Summary
 -------
 
+<<<<<<< HEAD
 Congrats! You've just developed a RESTful web service with Spring. This of course is just the beginning, and there are many more features to explore and take advantage of. Be sure to check out Spring's support for [securing](TODO), [describing](TODO) [managing](TODO), [testing](TODO) and [consuming](/gs-consuming-rest) RESTful web services.
+=======
+Congratulations! You've just developed a RESTful web service with Spring. 
+
+>>>>>>> Regenerate README.md based on updates
 
 
 [u-rest]: /understanding/rest
