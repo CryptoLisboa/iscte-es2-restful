@@ -1,4 +1,3 @@
-
 What you'll build
 -----------------
 
@@ -389,7 +388,6 @@ Congrats! You've just developed a RESTful web service with Spring. This of cours
 Congratulations! You've just developed a RESTful web service with Spring. 
 
 >>>>>>> Regenerate README.md based on updates
-
 
 [u-rest]: /understanding/rest
 [u-json]: /understanding/json
