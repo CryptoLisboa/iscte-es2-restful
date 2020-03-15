@@ -4,8 +4,8 @@ plugins {
 	id 'java'
 }
 
-group = 'com.example'
-version = '0.0.1-SNAPSHOT'
+group = 'pt.iscte.es2.groupproject'
+version = '4.2.0-SNAPSHOT'
 sourceCompatibility = '1.8'
 
 repositories {
