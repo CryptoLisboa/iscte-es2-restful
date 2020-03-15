@@ -1,5 +1,6 @@
 cd $(dirname $0)
-cd ../initial
+#cd ../initial
+cd ..
 
 mvn clean compile
 ret=$?
