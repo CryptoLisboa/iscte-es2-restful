@@ -8,5 +8,11 @@ pipeline {
       }
     }
 
+    stage('Build ') {
+      steps {
+        build 'grupo-javabuild'
+      }
+    }
+
   }
 }
