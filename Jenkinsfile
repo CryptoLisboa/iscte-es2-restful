@@ -14,5 +14,11 @@ pipeline {
       }
     }
 
+    stage('Generate JavaDoc') {
+      steps {
+        build 'csmma1 - javadoc'
+      }
+    }
+
   }
 }
