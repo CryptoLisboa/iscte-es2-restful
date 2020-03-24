@@ -34,4 +34,7 @@ public class NotesController {
 		// END TODO3
 		return notes;
 	}
+	public AtomicLong getCounter() {
+		return counter;
+	}
 }
