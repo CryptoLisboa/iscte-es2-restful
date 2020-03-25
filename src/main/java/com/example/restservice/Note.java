@@ -22,5 +22,4 @@ class Note {
 	public String toString() {
 		return "Note [id=" + id + ", note=" + note + "]";
 	}
-
 }
