@@ -46,7 +46,7 @@
 						<plugin>
       <groupId>org.jacoco</groupId>
       <artifactId>jacoco-maven-plugin</artifactId>
-      <version>0.6.4.201312101107</version>
+      <version>3.0.5</version>
       <executions>
         <execution>
           <id>pre-unit-test</id>
