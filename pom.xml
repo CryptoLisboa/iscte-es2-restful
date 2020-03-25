@@ -9,6 +9,7 @@
 		<version>2.2.2.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
+	
 
 	<groupId>pt.iscte-iul.es2.grouproject</groupId>
 	<artifactId>rest-service</artifactId>
@@ -29,7 +30,7 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.12</version>
+			<version>4.10</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -48,7 +49,7 @@
 		<dependency>
 			<groupId>org.jacoco</groupId>
 			<artifactId>jacoco-maven-plugin</artifactId>
-			<version>0.8.5</version>
+			<version>0.8.6</version>
 		</dependency>
 	</dependencies>
 
@@ -100,7 +101,7 @@
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.8.5</version>
+				<version>0.8.6-SNAPSHOT</version>
 				<executions>
 					<execution>
 						<goals>
