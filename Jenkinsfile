@@ -15,8 +15,19 @@ pipeline {
     }
 
     stage('Generate JavaDoc') {
-      steps {
-        build 'csmma1 - javadoc'
+      parallel {
+        stage('Generate JavaDoc') {
+          steps {
+            build 'csmma1 - javadoc'
+          }
+        }
+
+        stage('csmma1-junit') {
+          steps {
+            build 'falos - junitTests'
+          }
+        }
+
       }
     }
 
