@@ -22,7 +22,7 @@ pipeline {
           }
         }
 
-        stage('csmma1-junit') {
+        stage('JUnit Tests') {
           steps {
             build 'falos - junitTests'
           }
