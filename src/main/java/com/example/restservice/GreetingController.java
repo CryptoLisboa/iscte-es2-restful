@@ -26,5 +26,4 @@ public class GreetingController {
 	public AtomicLong getCounter() {
 		return counter;
 	}
-	
 }
