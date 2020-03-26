@@ -29,13 +29,21 @@ public class DynamicDataStore {
 	public long getNextId() {
 		return counter.getAndAdd(1);
 	}
+	
+	public Note getNoteById(long id) {
+		return notes.get(id);
+	}
 
 	public Note addNote(long id, String note) {
 		if (notes.containsKey(id)) {
 			return notes.get(id);
 		}
 		Note n = new Note(id, note);
-		notes.put(id, n);
+		notes.put(id, new Note(id, note));
 		return n;
+	}
+
+	public Note deleteNote(long id) {
+		return notes.remove(id);
 	}
 }
