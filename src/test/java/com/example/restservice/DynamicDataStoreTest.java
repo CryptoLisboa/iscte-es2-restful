@@ -24,6 +24,16 @@ class DynamicDataStoreTest {
 		assertEquals (ds.getNoteById(id).getNote(), st);
 		assertTrue (ds.getNoteById(id).getId()==id);
 	}
+	
+	@Test
+	void testGetNoteByIdRepeated() {
+		DynamicDataStore ds = DynamicDataStore.getInstance();
+		long id=ds.getNextId();
+		String st = "YO";
+		Note nota1 = ds.addNote(id, st);
+		Note nota2 = ds.addNote(id, st);
+		assertEquals (nota1, nota2);
+	}
 
 	@Test
 	void testDeleteNote() {
