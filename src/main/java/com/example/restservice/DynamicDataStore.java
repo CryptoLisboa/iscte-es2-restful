@@ -26,13 +26,6 @@ public class DynamicDataStore {
 		return notesAsList;
 	}
 
-	public AtomicLong getCounter() {
-		return counter;
-	}
-	
-	public long getLastId() {
-		return counter.get();
-	}
 	public long getNextId() {
 		return counter.getAndAdd(1);
 	}
