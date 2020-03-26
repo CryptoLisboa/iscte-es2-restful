@@ -31,8 +31,8 @@ class DynamicDataStoreTest {
 		long id=ds.getNextId();
 		String st = "YO";
 		Note nota1 = ds.addNote(id, st);
-		Note nota2 = ds.addNote(id, st);
-		assertEquals (nota1, nota2);
+		Note nota2 = ds.addNote(id, st + " ");
+		assertEquals (nota1.toString(), nota2.toString());
 	}
 
 	@Test
