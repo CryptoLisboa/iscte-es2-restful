@@ -31,5 +31,11 @@ pipeline {
       }
     }
 
+    stage('Build image') {
+      steps {
+        build 'build image'
+      }
+    }
+
   }
 }
