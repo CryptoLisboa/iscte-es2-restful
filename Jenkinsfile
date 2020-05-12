@@ -33,7 +33,7 @@ pipeline {
 
     stage('Build image') {
       steps {
-        build 'build image'
+        build 'docker image'
       }
     }
 
