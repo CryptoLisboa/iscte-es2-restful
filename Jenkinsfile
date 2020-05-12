@@ -8,7 +8,7 @@ pipeline {
       }
     }
 
-    stage('Build & Test') {
+    stage('Build') {
       steps {
         build 'grupo-javabuild'
       }
