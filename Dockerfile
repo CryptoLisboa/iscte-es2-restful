@@ -4,7 +4,7 @@ FROM openjdk:11
 #RUN addgroup -S spring && adduser -S spring -G spring
 #USER spring:spring
 #
-CMD ls
-ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} app.jar
+#CMD ls
+#ARG JAR_FILE=target/*.jar
+COPY target/rest-service-4.2.0-SNAPSHOT.jar app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
