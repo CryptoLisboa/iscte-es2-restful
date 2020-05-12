@@ -37,5 +37,11 @@ pipeline {
       }
     }
 
+    stage('Deploy App') {
+      steps {
+        build 'docker deploy'
+      }
+    }
+
   }
 }
